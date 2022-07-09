@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Pizza>
+
+@{
+    ViewData["Title"] = "Yummy pizzas";
+}
+
+@foreach (var item in Model) 
+{
+    <h3> @Html.DisplayFor(modelItem => item.Name) </h3>
+}
