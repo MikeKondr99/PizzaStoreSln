@@ -18,14 +18,14 @@ namespace PizzaStore.Controllers
                 imageSourse:"https://s1.eda.ru/StaticContent/Photos/120131085053/171027192707/p_O.jpg",
                 discount: 15
                 ),
-                new Product("Пеперони",16,outOfStoke:true),
+                new Product("Пеперони",16,outOfStock:true),
                 new Product("Мясная",345),
                 new Product("Маргарита",15,
                 description: "Очень вкусная пицца итд",
                 imageSourse:"https://s1.eda.ru/StaticContent/Photos/120131085053/171027192707/p_O.jpg",
                 discount: 15
                 ),
-                new Product("Пеперони",16,outOfStoke:true),
+                new Product("Пеперони",16,outOfStock:true),
                 new Product("Мясная",345),
             });
         }
