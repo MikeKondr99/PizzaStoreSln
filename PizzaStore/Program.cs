@@ -1,11 +1,24 @@
+using Microsoft.EntityFrameworkCore;
+using PizzaStore.Database;
 using PizzaStore.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var config = builder.Configuration;
 var services = builder.Services;
+
 // Add services to the container.
 services.AddControllersWithViews();
-services.AddSingleton<IProductService, ProductListService>();
+services.AddDbContext<DatabaseContext>();
+if (config["UseDatabase"] == "true")
+{
+    services.AddScoped<IProductService, ProductDBService>();
+}
+else
+{
+    services.AddScoped<IProductService, ProductListService>();
+}
+
+
 
 
 var app = builder.Build();
