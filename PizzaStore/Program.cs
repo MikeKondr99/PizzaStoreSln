@@ -15,7 +15,7 @@ if (config["UseDatabase"] == "true")
 }
 else
 {
-    services.AddScoped<IProductService, ProductListService>();
+    services.AddSingleton<IProductService, ProductListService>();
 }
 
 

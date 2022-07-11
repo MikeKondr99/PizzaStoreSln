@@ -4,16 +4,7 @@ namespace PizzaStore.Database
 {
     public class Product
     {
-        public Product(string name, double price, string description = "", string imageSourse = "", uint discount = 0, bool outOfStock = false)
-        {
-            Name = name ?? throw new ArgumentNullException(nameof(name));
-            Description = description ?? throw new ArgumentNullException(nameof(description));
-            ImageSource = imageSourse ?? throw new ArgumentNullException(nameof(imageSourse));
-            Price = price;
-            Discount = discount;
-            OutOfStock = outOfStock;
-        }
-
+   
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
