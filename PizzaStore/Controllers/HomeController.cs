@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PizzaStore.Models;
 using PizzaStore.Services;
 
 namespace PizzaStore.Controllers

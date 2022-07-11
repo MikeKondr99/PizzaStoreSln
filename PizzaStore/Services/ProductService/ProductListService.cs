@@ -1,4 +1,4 @@
-﻿using PizzaStore.Models;
+﻿using PizzaStore.Database;
 using System.Text.Json;
 
 namespace PizzaStore.Services
@@ -9,7 +9,7 @@ namespace PizzaStore.Services
         {
             products = JsonSerializer.Deserialize<List<Product>>(
                 new FileStream("products.json", FileMode.Open)
-                ) 
+                )
                 ?? new List<Product>();
         }
 

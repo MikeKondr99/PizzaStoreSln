@@ -1,4 +1,4 @@
-﻿using PizzaStore.Models;
+﻿using PizzaStore.Database;
 
 namespace PizzaStore.Services
 {
