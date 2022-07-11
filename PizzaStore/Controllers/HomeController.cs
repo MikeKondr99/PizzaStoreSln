@@ -7,7 +7,6 @@ namespace PizzaStore.Controllers
     [Route("")]
     public class HomeController : Controller
     {
-
         [HttpGet("")]
         public async Task<IActionResult> GetProducts()
         {
@@ -29,7 +28,5 @@ namespace PizzaStore.Controllers
                 new Product("Мясная",345),
             });
         }
-
-
     }
 }
