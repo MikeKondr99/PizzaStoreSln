@@ -3,5 +3,19 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4" >
+            <div class="product-item">
+              <img src="https://yandex-images.clstorage.net/5Ig6xP087/9bf068kUZ/dDd_9o2EikgAcr6ZOCsktwfiVN3WRoMCqVmzUJHLdntZHzdBCRwgyCCBzXfN4z74XKQQIIbg5xQIgCepIyI9eBUiLue96PN0KHa-lQwPSJMbznTh9lbTHqA47z3YpmZOGWY_dF3plS3kESHbFCbqVOmhcVSC4ItMSMGOCRa3ZEXUy0-u7ZTzbKRC0618_1ybK-vEzc6PEyOJpcZ9fJ4jfomKNqnVScmtiPEBV5AKMpjVpVnYirjCcLytwtRCa0CJ9CM_xkVwI5gossudfIeE70-LyMEet2-3-cEKrYTy-54FTkLV2QG9BbzFYUfEhjqkRWnJcPqQ8uwgSRK8Pq9kregzN-ZBeJ_UnPbnrcCLBHMzv1AF1qv3MxFVpgXk2ptivQ524Z0ZWUFQPYVbzL4-uLXBbdS2-KI85NVGTK477IUwz3f6EYT_pITaOyXMzwQfXxPcJQ7TOxN5MUYJvI6X4pGaLsU5cYm5wMkN24Aa-uCdTTX81rRiyKA5fmBCH-yhaI-3epno29ikZnuNvJ-wP5-_sM2aj2NrFZ2CnWAml7Jl7jItoaXxASyBNUtMEk48eaV9WDL8wmRM8WLw8seQZaDXH06dnOe4_NZ_5cSjoL9363gp4kMrG-XpKgmEuv-GhTZy3R2duY0gyek3YIauQMGJTbgelP54INmyHIafsE0s2yt6OZTXNAAKpyXYt8hjyyO07YoHGwu1zT4JbE47vpki9g3VLc0R6NlV_3gGbkAFEVk0Cmhi2EgtTlTWE_xNTK9HFumEA5SI5sNxNMuwq18XdOkWGzcvXTUSlTSi52rZvkK1NS35cQC5YbN04rZoTZmxMNL8CrRMudpwJu8chVS_L8IRbMNgqEa_hdTvKLezx3hpmiMrT_UZ7ql8Dv_i7SryJfGxASVAqZ3bcCK2QO2VJbRaFP5UXLnKwFrzIOF8S5uSHUDPxHjq67n4OxCXJ6N8qX6bfz9RYYIt5J6E" alt="Lil blck dres">
+              <div class="product-list">
+                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                  <span class="price">@Html.DisplayFor(modelItem => item.Price) ₽</span>
+                  <a href="#top" class="button">В корзину</a>
+              </div>
+            </div>
+        </div>
+    }
+</div>
 
-<h3> Test </h3>
