@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="db.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include=".github\workflows\deploy.yml" />
   </ItemGroup>
 
