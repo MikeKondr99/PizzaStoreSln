@@ -4,12 +4,38 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>@ViewData["Title"] - PizzaStore </title>
+	<title>PizzaStore</title>
+
+	<!-- Bootstrap сетка -->
+	<link rel="stylesheet" href="libs/bootstrap-grid.min.css">
+
+	<!-- Шрифты с Google Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+	<!-- Стили сайта -->
 	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-reboot.min.css" />
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/header-styles.css">
 	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 	<link rel="stylesheet" href="~/PizzaStore.styles.css" asp-append-version="true" />
+	<div class="navbar">
+		<div class="container">
+			<h3><a href="#" class="navbar-brand">PizzaStore</a></h3>
+			<div class="navbar-wrap">
+				<ul class="navbar-menu">
+					<li><a href="#pizza">Пицца</a></li>
+					<li><a href="#drinks">Напитки</a></li>
+					<li><a href="#">Бургер-меню</a></li>
+				</ul>
+				<a href="#" class="basket">Корзина</a>
+			</div>
+		</div>
+	</div>
 </head>
 	<!-- Body -->
+
 <body>
 	<p><a name="top"></a></p>
 	<div class="container">

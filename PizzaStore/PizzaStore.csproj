@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <None Include=".github\workflows\deploy.yml" />
+    <None Include="wwwroot\css\styles.css" />
   </ItemGroup>
 
   <ItemGroup>
