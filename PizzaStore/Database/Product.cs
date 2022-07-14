@@ -12,6 +12,7 @@ namespace PizzaStore.Database
         public string ImageSource { get; set; }
         public double Price { get; set; }
         public uint Discount { get; set; }
-        public bool OutOfStock { get; set; }
+        public uint InStock { get; set; }
+        public ICollection<Category> Categories { get; set; }
     }
 }

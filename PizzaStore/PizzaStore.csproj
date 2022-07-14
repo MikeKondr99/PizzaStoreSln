@@ -7,11 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove=".github\**" />
+    <Content Remove=".github\**" />
+    <EmbeddedResource Remove=".github\**" />
+    <None Remove=".github\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="db.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include=".github\workflows\deploy.yml" />
     <None Include="wwwroot\css\styles.css" />
   </ItemGroup>
 
