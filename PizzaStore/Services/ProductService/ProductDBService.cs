@@ -10,7 +10,7 @@ namespace PizzaStore.Services
         public ProductDBService(DatabaseContext databaseContext)
         {
             _databaseContext = databaseContext;
-            //_databaseContext.Database.EnsureCreated();
+            _databaseContext.Database.EnsureCreated();
         }
 
         public async Task<IEnumerable<Product>?> GetProductsAsync()

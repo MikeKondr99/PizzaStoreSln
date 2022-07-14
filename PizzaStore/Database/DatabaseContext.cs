@@ -14,5 +14,8 @@ namespace PizzaStore.Database
             optionsBuilder.UseSqlServer(File.ReadAllText("db.txt"));
         }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Caterories { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
     }
 }
