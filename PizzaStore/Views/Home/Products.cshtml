@@ -28,58 +28,83 @@
 </head>
 
 <body>
-    <div class="category">
-    <p><a name="pizza"></a>Пицца<p>
-    </div>
+
+    <a class="category" name="pizza">Пицца</a>
     <div class="container" mt-5>
         <div class="row">
-                @foreach (var item in Model)
-                {
-            <div class="col-md-3">
-                <div class="product">
-                    <div class="image">
-                        <img src="https://avatars.mds.yandex.net/i?id=1b49a822a2076ef5fefd6a9b3f015720-4507927-images-thumbs&n=13&exp=1"
-                            alt="">
-                    </div>
-                    <div class="info">
-                        <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
-                        <div>
-                            <span class="price">@Html.DisplayFor(modelItem => item.Price) ₽</span>
+            @foreach (var item in Model.Where(p => p.Categories.Any(x => x.Name == "Пицца")))
+            {
+                <div class="col-md-3">
+                    <div class="product">
+                        <div class="image">
+                            <img src="@Html.DisplayFor(modelItem => item.ImageSource)" alt="">
+                        </div>
+                        <div class="info">
+                            <div>
+                                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                                <h4>@Html.DisplayFor(modelItem => item.Description)</h4>
+                            </div>
                             <button class="add-to-cart">
                                 <ion-icon name="cart-outline"></ion-icon>
                             </button>
                         </div>
+                        <span class="price">@Html.DisplayFor(modelItem => item.Price) ₽</span>
                     </div>
                 </div>
-            </div>
-                }
+            }
         </div>
     </div>
-    <div class="category">
-    <p><a name="drinks"></a>Напитки<p>
-    </div>
-    <div class="row">
-            <div class="col-md-4">
-                <div class="product">
-                    <div class="image">
-                        <img src="https://smakfoodcourt.ru/wp-content/uploads/2022/03/photo_2022-03-13_15-14-19.jpg"
-                            alt="">
-                    </div>
-                    <div class="info">
-                        <h3>Фанта 1л</h3>
-                        <div>
-                            <span class="price">145 ₽</span>
+    <a class="category" name="snacks">Закуски</a>
+    <div class="container" mt-5>
+        <div class="row">
+            @foreach (var item in Model.Where(p => p.Categories.Any(x => x.Name == "Закуска")))
+            {
+                <div class="col-md-3">
+                    <div class="product">
+                        <div class="image">
+                            <img src="@Html.DisplayFor(modelItem => item.ImageSource)" alt="">
+                        </div>
+                        <div class="info">
+                            <div>
+                                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                                <h4>@Html.DisplayFor(modelItem => item.Description)</h4>
+                            </div>
                             <button class="add-to-cart">
                                 <ion-icon name="cart-outline"></ion-icon>
                             </button>
                         </div>
+                        <span class="price">@Html.DisplayFor(modelItem => item.Price) ₽</span>
                     </div>
                 </div>
-            </div>
+            }
         </div>
     </div>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <a class="category" name="drinks">Напитки</a>
+    <div class="container" mt-5>
+        <div class="row">
+            @foreach (var item in Model.Where(p => p.Categories.Any(x => x.Name == "Напиток")))
+            {
+                <div class="col-md-3">
+                    <div class="product">
+                        <div class="image">
+                            <img src="@Html.DisplayFor(modelItem => item.ImageSource)" alt="">
+                        </div>
+                        <div class="info">
+                            <div>
+                                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                                <h4>@Html.DisplayFor(modelItem => item.Description)</h4>
+                            </div>
+                            <button class="add-to-cart">
+                                <ion-icon name="cart-outline"></ion-icon>
+                            </button>
+                        </div>
+                         <span class="price">@Html.DisplayFor(modelItem => item.Price) ₽</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>

@@ -5,7 +5,7 @@ namespace PizzaStore.Services
 {
     public class ProductDBService : IProductService
     {
-        DatabaseContext _databaseContext;
+        private DatabaseContext _databaseContext;
 
         public ProductDBService(DatabaseContext databaseContext)
         {
@@ -15,7 +15,7 @@ namespace PizzaStore.Services
 
         public async Task<IEnumerable<Product>?> GetProductsAsync()
         {
-            return await _databaseContext.Products.ToListAsync();
+            return await _databaseContext.Products.Include(p => p.Categories).ToListAsync();
         }
     }
 }

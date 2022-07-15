@@ -20,33 +20,29 @@
 	<link rel="stylesheet" href="css/header-styles.css">
 	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 	<link rel="stylesheet" href="~/PizzaStore.styles.css" asp-append-version="true" />
+</head>
+<body>
 	<div class="navbar">
 		<div class="container">
-			<h3><a href="#" class="navbar-brand">PizzaStore</a></h3>
+			<h3><a name="top" class="navbar-brand">PizzaStore</a></h3>
 			<div class="navbar-wrap">
 				<ul class="navbar-menu">
 					<li><a href="#pizza">Пицца</a></li>
+					<li><a href="#snacks">Закуски</a></li>
 					<li><a href="#drinks">Напитки</a></li>
-					<li><a href="#">Бургер-меню</a></li>
 				</ul>
 				<a href="#" class="basket">Корзина</a>
 			</div>
 		</div>
 	</div>
-</head>
-	<!-- Body -->
-
-<body>
-	<p><a name="top"></a></p>
 	<div class="container">
 		<main role="main" class="pb-3">
 			@RenderBody()
 		</main>
 	</div>
-	
 	<!-- Footer -->
 	<footer class="border-top footer text-muted">
-		<div class="container" style="text-align:right; font-color:black">
+		<div class="container" style="text-align:right;">
 			<a href="about">About</a> -
 			<a href="https://github.com/MikeKondr99/PizzaStoreSln">Source (GitHub Page)</a> -
 			<a href="#top">To the top</a> -
@@ -59,5 +55,4 @@
 	<script src="~/js/site.js" asp-append-version="true"></script>
 	@await RenderSectionAsync("Scripts", required: false)
 </body>
-
 </html>
