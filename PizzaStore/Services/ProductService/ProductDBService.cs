@@ -13,6 +13,11 @@ namespace PizzaStore.Services
             _databaseContext.Database.EnsureCreated();
         }
 
+        public async Task<Product?> GetProduct(int id)
+        {
+            return await _databaseContext.Products.Where(p => p.Id == id).FirstOrDefaultAsync();
+        }
+
         public async Task<IEnumerable<Product>?> GetProductsAsync()
         {
             return await _databaseContext.Products.Include(p => p.Categories).ToListAsync();

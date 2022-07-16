@@ -14,11 +14,29 @@ namespace PizzaStore.Controllers
         {
             this.productService = productService;
         }
-        
+
         [HttpGet("")]
         public async Task<IActionResult> GetProducts()
         {
             return View("Products", await productService.GetProductsAsync());
+        }
+
+        [HttpGet("about")]
+        public async Task<IActionResult> About()
+        {
+            return View("About");
+        }
+
+        [HttpGet("cart")]
+        public async Task<IActionResult> ShoppingCart()
+        {
+            return View("Cart");
+        }
+
+        [HttpGet("get")]
+        public async Task<IActionResult> Get([FromQuery] int id)
+        {
+            return Ok(await productService.GetProduct(id));
         }
     }
 }

@@ -9,14 +9,7 @@ var services = builder.Services;
 // Add services to the container.
 services.AddControllersWithViews();
 services.AddDbContext<DatabaseContext>();
-if (config["UseDatabase"] == "True")
-{
-    services.AddScoped<IProductService, ProductDBService>();
-}
-else
-{
-    services.AddSingleton<IProductService, ProductListService>();
-}
+services.AddScoped<IProductService, ProductDBService>();
 
 
 
