@@ -20,5 +20,17 @@ namespace PizzaStore.Controllers
         {
             return View("Products", await productService.GetProductsAsync());
         }
+
+        [HttpGet("about")]
+        public async Task<IActionResult> About()
+        {
+            return View("About");
+        }
+
+        [HttpGet("cart")]
+        public async Task<IActionResult> ShoppingCart()
+        {
+            return View("Cart");
+        }
     }
 }
