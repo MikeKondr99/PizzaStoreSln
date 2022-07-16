@@ -39,7 +39,6 @@ function addProd(id) {
         cart.set(id, 1);
     }
     alert(cartToString())
-    window.open("https://" + document.location.host + "/cart?prods="+ cartToString(),"_self");
 }
 
 function cartToString() {
