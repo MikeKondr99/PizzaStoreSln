@@ -2,110 +2,43 @@
 @model IEnumerable<Product>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var categories = new (string singular, string plural, string link)[] {
+("Пицца", "Пицца", "pizza"),
+("Закуска", "Закуски", "snacks"),
+("Напиток", "Напитки", "drinks")
+};
 }
-
-<!DOCTYPE html>
-<html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizza Store</title>
-
-    <!-- Bootstrap reboot (для сброса стилей) -->
-    <link rel="stylesheet" href="libs/bootstrap-reboot.min.css">
-
-    <!-- Bootstrap сетка -->
-    <link rel="stylesheet" href="libs/bootstrap-grid.min.css">
-
-    <!-- Шрифты с Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
-
-    <!-- Стили сайта -->
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+<script src="~/js/site.js" asp-append-version="true"></script>
 
 <body>
-
-    <a class="category" name="pizza">Пицца</a>
-    <div class="container" mt-5>
-        <div class="row">
-            @foreach (var item in Model.Where(p => p.Categories.Any(x => x.Name == "Пицца")))
-            {
-                <div class="col-md-3">
-                    <div class="product">
-                        <div class="image">
-                            <img src="@Html.DisplayFor(modelItem => item.ImageSource)" alt="">
-                        </div>
-                        <div class="info">
-                            <div>
-                                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
-                                <h4>@Html.DisplayFor(modelItem => item.Description)</h4>
+    @foreach (var category in categories)
+    {
+        <a class="category" name="@category.link">@category.plural</a>
+        <div class="container" mt-5>
+            <div class="row">
+                @foreach (var item in Model.Where(p => p.Categories.Any(x => x.Name == category.singular)))
+                {
+                    <div class="col-md-3">
+                        <div class="product">
+                            <div class="image">
+                                <img src="@Html.DisplayFor(modelItem => item.ImageSource)" alt="">
                             </div>
-                            <button name="@item.Id" class="add-to-cart">
-                                <ion-icon name="cart-outline"></ion-icon>
-                            </button>
-                        </div>
-                        <span class="price">@Html.DisplayFor(modelItem => item.Price) ₽</span>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
-    <a class="category" name="snacks">Закуски</a>
-    <div class="container" mt-5>
-        <div class="row">
-            @foreach (var item in Model.Where(p => p.Categories.Any(x => x.Name == "Закуска")))
-            {
-                <div class="col-md-3">
-                    <div class="product">
-                        <div class="image">
-                            <img src="@Html.DisplayFor(modelItem => item.ImageSource)" alt="">
-                        </div>
-                        <div class="info">
-                            <div>
-                                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
-                                <h4>@Html.DisplayFor(modelItem => item.Description)</h4>
+                            <div class="info">
+                                <div>
+                                    <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                                    <h4>@Html.DisplayFor(modelItem => item.Description)</h4>
+                                </div>
+                                <button id="@item.Id" onclick="test();" class="add-to-cart">
+                                    <ion-icon name="cart-outline"></ion-icon>
+                                </button>
                             </div>
-                            <button name="@item.Id" class="add-to-cart">
-                                <ion-icon name="cart-outline"></ion-icon>
-                            </button>
+                            <span class="price">@Html.DisplayFor(modelItem => item.Price) ₽</span>
                         </div>
-                        <span class="price">@Html.DisplayFor(modelItem => item.Price) ₽</span>
                     </div>
-                </div>
-            }
+                }
+            </div>
         </div>
-    </div>
-    <a class="category" name="drinks">Напитки</a>
-    <div class="container" mt-5>
-        <div class="row">
-            @foreach (var item in Model.Where(p => p.Categories.Any(x => x.Name == "Напиток")))
-            {
-                <div class="col-md-3">
-                    <div class="product">
-                        <div class="image">
-                            <img src="@Html.DisplayFor(modelItem => item.ImageSource)" alt="">
-                        </div>
-                        <div class="info">
-                            <div>
-                                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
-                                <h4>@Html.DisplayFor(modelItem => item.Description)</h4>
-                            </div>
-                            <button name="@item.Id" class="add-to-cart">
-                                <ion-icon name="cart-outline"></ion-icon>
-                            </button>
-                        </div>
-                        <span class="price">@Html.DisplayFor(modelItem => item.Price) ₽</span>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
+    }
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
-
-</html>

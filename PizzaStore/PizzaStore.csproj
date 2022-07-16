@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <None Include="wwwroot\css\styles.css" />
+    <None Include="wwwroot\js\hamburger-menu-script.js" />
   </ItemGroup>
 
   <ItemGroup>
