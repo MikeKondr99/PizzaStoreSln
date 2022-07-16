@@ -14,7 +14,7 @@ namespace PizzaStore.Controllers
         {
             this.productService = productService;
         }
-        
+
         [HttpGet("")]
         public async Task<IActionResult> GetProducts()
         {
@@ -31,6 +31,12 @@ namespace PizzaStore.Controllers
         public async Task<IActionResult> ShoppingCart()
         {
             return View("Cart");
+        }
+
+        [HttpGet("get")]
+        public async Task<IActionResult> Get([FromQuery] int id)
+        {
+            return Ok(await productService.GetProduct(id));
         }
     }
 }
