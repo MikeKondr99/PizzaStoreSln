@@ -47,7 +47,7 @@ function cartToString() {
 }
 
 function goCart() {
-    window.open(document.URL+ "/cart?prods="+ cartToString(),"_self");
+    window.open("https://" + document.location.host + "/cart?prods="+ cartToString(),"_self");
 }
 
 
