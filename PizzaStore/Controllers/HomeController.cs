@@ -28,15 +28,20 @@ namespace PizzaStore.Controllers
         }
 
         [HttpGet("cart")]
-        public async Task<IActionResult> ShoppingCart()
+        public async Task<IActionResult> ShoppingCart([FromQuery] string cart)
         {
-            return View("Cart");
+            var prods = cart.Split(new char[] { ',' });
+            var cart2 = prods.Select(x => {
+                var pr = x.Split(':');
+                return (productService.GetProductAsync(int.Parse(pr[0])).Result,int.Parse(pr[1]));
+            });
+            return View("Cart",cart2.ToList());
         }
 
         [HttpGet("get")]
         public async Task<IActionResult> Get([FromQuery] int id)
         {
-            return Ok(await productService.GetProduct(id));
+            return Ok(await productService.GetProductAsync(id));
         }
     }
 }
