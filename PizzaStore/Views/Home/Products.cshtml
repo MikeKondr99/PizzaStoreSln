@@ -8,32 +8,31 @@
 ("Напиток", "Напитки", "drinks")
 };
 }
-<script src="~/js/site.js" asp-append-version="true"></script>
 
 <body>
     @foreach (var category in categories)
     {
         <a class="category" name="@category.link">@category.plural</a>
         <div class="container" mt-5>
-            <div class="row">
+            <!-- Parent -->
+        <div class="row product-wrapper">
                 @foreach (var item in Model.Where(p => p.Categories.Any(x => x.Name == category.singular)))
                 {
-                    <div class="col-md-3">
-                        <div class="product">
-                            <div class="image">
-                                <img src="@Html.DisplayFor(modelItem => item.ImageSource)" alt="">
-                            </div>
-                            <div class="info">
-                                <div>
-                                    <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
-                                    <h4>@Html.DisplayFor(modelItem => item.Description)</h4>
-                                </div>
-                                <button id="@item.Id" onclick="test();" class="add-to-cart">
-                                    <ion-icon name="cart-outline"></ion-icon>
-                                </button>
-                            </div>
-                            <span class="price">@Html.DisplayFor(modelItem => item.Price) ₽</span>
+                    <!-- Child -->
+                    <div class="product">
+                        <div class="image">
+                            <img src="@Html.DisplayFor(modelItem => item.ImageSource)" alt="">
                         </div>
+                        <div class="info">
+                            <div>
+                                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                                <h4>@Html.DisplayFor(modelItem => item.Description)</h4>
+                            </div>
+                            <button id="@item.Id" onclick="test();" class="add-to-cart">
+                                <ion-icon name="cart-outline"></ion-icon>
+                            </button>
+                        </div>
+                        <span class="price">@Html.DisplayFor(modelItem => item.Price) ₽</span>
                     </div>
                 }
             </div>
