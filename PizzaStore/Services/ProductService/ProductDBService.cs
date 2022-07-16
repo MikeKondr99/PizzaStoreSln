@@ -13,7 +13,7 @@ namespace PizzaStore.Services
             _databaseContext.Database.EnsureCreated();
         }
 
-        public async Task<Product?> GetProduct(int id)
+        public async Task<Product?> GetProductAsync(int id)
         {
             return await _databaseContext.Products.Where(p => p.Id == id).FirstOrDefaultAsync();
         }

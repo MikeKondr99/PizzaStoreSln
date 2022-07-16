@@ -6,6 +6,6 @@ namespace PizzaStore.Services
     {
         Task<IEnumerable<Product>?> GetProductsAsync();
 
-        Task<Product?> GetProduct(int id);
+        Task<Product?> GetProductAsync(int id);
     }
 }

@@ -28,7 +28,7 @@
                                     <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
                                     <h4>@Html.DisplayFor(modelItem => item.Description)</h4>
                                 </div>
-                                <button id="@item.Id" onclick="test();" class="add-to-cart">
+                                <button id="@item.Id" onclick="addProd(@item.Id)" class="add-to-cart">
                                     <ion-icon name="cart-outline"></ion-icon>
                                 </button>
                             </div>
