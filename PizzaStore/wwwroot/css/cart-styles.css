@@ -1,0 +1,88 @@
+.product {
+    flex-wrap: wrap;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    display: flex;
+}
+
+.image img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.info h3 {
+    margin-bottom: 0;
+    font-size: 25px;
+}
+
+.info {
+    margin-left: 10px;
+    flex: auto;
+    display: block;
+    align-items: center;
+}
+
+.info-price {
+    display: flex;
+    flex-flow: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    padding-top: 40px;
+    font-weight: 700;
+    font-size: 18px;
+    position: relative;
+    float: right;
+}
+
+.buttons {
+    align-items: center;
+    float: right;
+    justify-content: center;
+}
+
+.buttons button {
+    border: none;
+    min-width: 35px;
+    min-height: 35px;
+    align-items: center;
+    justify-content: center;
+    background-color: greenyellow;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.buttons button ion-icon {
+    color: black;
+}
+
+.category {
+    margin-block-start: 30px;
+}
+
+.entry {
+    margin: 6px;
+}
+
+.formfield * {
+    vertical-align: top;
+}
+
+.form-buttons {
+    border: none;
+    min-width: 35px;
+    min-height: 35px;
+    align-items: center;
+    justify-content: center;
+    background-color: greenyellow;
+    color: black;
+    border-radius: 10px;
+}

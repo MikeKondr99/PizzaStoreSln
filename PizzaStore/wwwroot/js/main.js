@@ -4,7 +4,7 @@ function loadCart() {
     let cCart = getCookie("cart").split(',').filter(x => x != "");
     cCart.forEach(kv1 => {
         let kv = kv1.split(':');
-        cart.set(kv[0],kv[1]);
+        cart.set(kv[0], kv[1]);
     });
 }
 
@@ -22,12 +22,12 @@ function setCookie(cName, cValue, expDays) {
     document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
 }
 
-function mapToObj(map){
-  var obj = {}
-  map.forEach(function(v, k){
-    obj[k] = v
-  })
-  return obj
+function mapToObj(map) {
+    var obj = {}
+    map.forEach(function (v, k) {
+        obj[k] = v
+    })
+    return obj
 }
 
 function addProd(id) {
@@ -38,17 +38,12 @@ function addProd(id) {
     else {
         cart.set(id, 1);
     }
-    alert(cartToString())
-    window.open("https://" + document.location.host + "/cart?prods="+ cartToString(),"_self");
 }
 
 function cartToString() {
-    return Array.from(cart).map(x=>x[0] + ":" + x[1]).join(",");
+    return Array.from(cart).map(x => x[0] + ":" + x[1]).join(",");
 }
 
 function goCart() {
-    window.open("https://" + document.location.host + "/cart?prods="+ cartToString(),"_self");
+    window.open("https://" + document.location.host + "/cart?cart=" + cartToString(), "_self");
 }
-
-
-
