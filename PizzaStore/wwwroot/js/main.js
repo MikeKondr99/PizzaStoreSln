@@ -38,6 +38,7 @@ function addProd(id) {
     else {
         cart.set(id, 1);
     }
+    alert(cartToString())
 }
 
 function cartToString() {
