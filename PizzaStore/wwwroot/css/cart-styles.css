@@ -37,6 +37,7 @@
 
 .price {
     padding-top: 40px;
+    padding-left: 40px;
     font-weight: 700;
     font-size: 18px;
     position: relative;
@@ -70,10 +71,23 @@
 
 .entry {
     margin: 6px;
+    display: flex;
+}
+
+.entry input {
+    width: 100%;
+}
+
+.formfield {
+    display: flex;
 }
 
 .formfield * {
     vertical-align: top;
+}
+
+.formfield textarea {
+    width: 100%;
 }
 
 .form-buttons {
@@ -85,4 +99,20 @@
     background-color: greenyellow;
     color: black;
     border-radius: 10px;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+* label {
+    margin-right: 8px;
+}
+
+.form-buttons {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
 }
