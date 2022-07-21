@@ -1,10 +1,13 @@
 ﻿var cart = new Map();
+var counter = 0;
+const counterEl = document.getElementsByName("productCount");
 loadCart();
 function loadCart() {
     let cCart = getCookie("cart").split(',').filter(x => x != "");
     cCart.forEach(kv1 => {
         let kv = kv1.split(':');
         cart.set(kv[0], kv[1]);
+        counter += parseInt(kv[1]);
     });
 }
 
@@ -31,14 +34,18 @@ function mapToObj(map) {
 }
 
 function addProd(id) {
+    let button = document.getElementById(id);
+    counter += 1;
+    counterEl[0].innerHTML = counter;
     if (cart.has(id)) {
         let v = cart.get(id);
         cart.set(id, v + 1);
+        button.innerHTML = v + 1;
     }
     else {
         cart.set(id, 1);
+        button.innerHTML = 1;
     }
-    alert(cartToString())
 }
 
 function cartToString() {
